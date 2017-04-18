@@ -17,25 +17,19 @@
         const jsContainer = document.querySelector('#js');
         const reactContainer = document.querySelector('#react');
         function render(){
-            const reactDescriptiveObjects = React.createElement(
-                                                'div',
-                                                null,
-                                                React.createElement('h1',null,'Hello React'),
+            const reactDescriptiveObjects = React.createElement('div', null,React.createElement('h1',null,'Hello React'),
                                                 'Name: ',
                                                 React.createElement('input'),
-                                                React.createElement('p', null, `The current time is: ${ new Date() }`
-                                                )
+                                                React.createElement('p', null, `The current time is: ${ new Date() }`)
                                             )
             jsContainer.innerHTML = `
                 <h1>Hello Dojo!</h1>
                 Name: <input type="text"/>
                 <p>The current time is: ${ new Date() }</p>
             `;
-            ReactDOM.render(
-                reactDescriptiveObjects,
-                reactContainer
-            );
+            ReactDOM.render(reactDescriptiveObjects, reactContainer);
         }
+
         render();
         setInterval(render, 1000);
     </script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src='node_modules/react/dist/react.js'></script>
+    <script src='node_modules/react-dom/dist/react-dom.js'></script>
+</head>
+
+<body>
+  <body>
+  <h1>hello dojo!</h1>
+  <hr>
+  <div id="app"></div>
+  <script src="node_modules/react/dist/react.js"></script>
+  <script src="node_modules/react-dom/dist/react-dom.js"></script>
+  <script type="text/javascript">
+      const todo = React.createElement(
+          "div",
+          null,
+          React.createElement(
+              "h1",
+              null,
+              "Hello Dojo!"
+          ),
+          React.createElement(
+              "h3",
+              null,
+              "Things I need to do: "
+          ),
+          React.createElement(
+              "ul",
+              null,
+              React.createElement(
+                  "li",
+                  null,
+                  "Learn Lebab"
+              ),
+              React.createElement(
+                  "li",
+                  null,
+                  "Climb Mt Fuji"
+              ),
+              React.createElement(
+                  "li",
+                  null,
+                  "Eat good"
+              ),
+              React.createElement(
+                  "li",
+                  null,
+                  "Learn to breakdance"
+              )
+          )
+      );
+      ReactDOM.render(todo, document.getElementById('app'))
+  </script>
+</body>
+
+</body>
+
+</html>

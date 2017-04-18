@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <style>
+        .counter{
+            text-align: center;
+            color:midnightblue;
+            font-family:monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        class Counter extends React.Component{
+            constructor(props){
+                super(props)
+                this.state = {count: 0}
+                //can bind here
+                this.increment = this.increment.bind(this)
+                this.decrement = this.decrement.bind(this)
+            }
+            increment(){
+                this.setState({count:this.state.count +1})
+            }
+            decrement(){
+                this.setState({count:this.state.count -1})
+            }
+            render(){
+                //now we have access to props and state
+                return (
+                    <div className="counter">
+                        <h1>{this.state.count}</h1>
+                    {/* => will keep the "this" bound to the original constructor function */}
+                    {/* can also bind with .bind(this) */}
+                        <button onClick = {this.increment}>Increase</button>
+                        <button onClick = {this.decrement}>Decrease</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<Counter/>, document.getElementById("app"));
+
+
+    </script>
+</body>
+
+</html>

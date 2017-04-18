@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div class="Headline">
+      <h1>Button</h1>
+    </div>
+    <div id="below"></div>
+    <div id="vanilla_js_Div"></div>
+    <div id="reactDiv"></div>
+  </body>
+  <script type="text/javascript">
+    const myButton = React.createElement('button', null, 'Click Me!');
+    ReactDOM.render(myButton, document.getElementById('app'))
+
+    const myText = React.createElement('p', null, 'This is a paragraph tag area');
+    ReactDOM.render(myText, document.getElementById('below'));
+
+    const vanilla_js_container = document.querySelector('#vanilla_js_Div');
+    const reactContainer = document.querySelector('#reactDiv');
+    function renderDateCode() {
+      const reactDateContent = React.createElement('div', null, React.createElement('h1', null, 'Date Displayed Below:'),
+                                                  'Enter Name: ',
+                                                  React.createElement('input'),
+                                                  React.createElement('p', null, `The current time is: ${new Date()}`)
+                                                )
+                            vanilla_js_container.innerHTML = `
+                            <h1>Current Time in Vanilla JS</h1>
+                            Name: <input type="text"/>
+                            <p>The current time is: ${new Date() }</P>
+                            `;
+                            ReactDOM.render(reactDateContent, reactContainer);
+                            }
+                    renderDateCode();
+                    setInterval(renderDateCode,5000);
+  </script>
+</html>
